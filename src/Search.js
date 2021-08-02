@@ -1,9 +1,23 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./Homepage.css";
 import "./Search.css";
+import WordData from "./WordData.js";
 
 export default function Search() {
   let [keyword, setKeyword] = useState("");
+  let [wordData, setWordData] = useState(null);
+
+  function wordSearch(response) {
+    setWordData({
+      word: response.data.word,
+      text: response.data.phonetics.text,
+      verb: response.data.meanings[0].definitions.definition,
+      verbsynonym: response.data.meanings[0].definitions.definition.synonyms,
+      noun: response.data.meanings[1].definitions.definition,
+      nounsynonym: response.data.meanings[1].definitions.synonyms,
+    });
+  }
 
   function handleSubmit(event) {
     setKeyword(event.target.value);
@@ -11,7 +25,8 @@ export default function Search() {
 
   function search(event) {
     event.preventDefault();
-    alert(`Searching for ${keyword}`);
+    let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`;
+    axios.get(apiUrl).then(wordSearch);
   }
 
   return (
@@ -26,6 +41,7 @@ export default function Search() {
         ></input>
         <button className="button">Search</button>
       </form>
+      <WordData data={wordData} />
     </div>
   );
 }
