@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Homepage.css";
 import "./Search.css";
 
@@ -11,6 +11,7 @@ export default function Search() {
 
   function search(event) {
     event.preventDefault();
+    alert(`Searching for ${keyword}`);
   }
 
   return (
