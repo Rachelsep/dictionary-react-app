@@ -3,13 +3,14 @@ import "./Homepage.css";
 import "./Search.css";
 
 export default function Search() {
+  let [keyword, setKeyword] = useState("");
+
   function handleSubmit(event) {
-    event.preventDefault();
+    setKeyword(event.target.value);
   }
 
   function search(event) {
     event.preventDefault();
-    console.log("hello");
   }
 
   return (
@@ -20,6 +21,7 @@ export default function Search() {
           type="search"
           placeholder="     Search for a word"
           onChange={handleSubmit}
+          autoFocus="on"
         ></input>
         <button className="button">Search</button>
       </form>
