@@ -9,6 +9,8 @@ export default function Search() {
   let [wordData, setWordData] = useState(null);
 
   function wordSearch(response) {
+    console.log(response);
+    console.log("howdy");
     setWordData({
       word: response.data.word,
       text: response.data.phonetics.text,
