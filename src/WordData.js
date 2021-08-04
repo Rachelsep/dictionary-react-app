@@ -4,7 +4,6 @@ import "./WordData.css";
 import Phonetics from "./Phonetics";
 
 export default function WordData(props) {
-  console.log(props.data);
   if (props.data) {
     return (
       <div className="word-data">
