@@ -1,5 +1,6 @@
 import React from "react";
 import Meaning from "./Meaning";
+import "./WordData.css";
 
 export default function WordData(props) {
   if (props.data) {

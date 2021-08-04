@@ -32,7 +32,7 @@ export default function Search() {
           onChange={handleSubmit}
           autoFocus="on"
         ></input>
-        <button className="button">Search</button>
+        <button className="button mt-3">Search</button>
       </form>
       <WordData data={wordData} />
     </div>
