@@ -8,6 +8,9 @@ export default function WordData(props) {
       <div className="word-data">
         <h1 className="word">{props.data.word}</h1>
         <h2 className="phonetics">{props.data.phonetics[0].text}</h2>
+        <h2 className="audio">
+          <a href="props.data.phonetics[0].audio">Audio</a>
+        </h2>
 
         {props.data.meanings.map(function (meaning, index) {
           return (
