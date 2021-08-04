@@ -9,16 +9,7 @@ export default function Search() {
   let [wordData, setWordData] = useState(null);
 
   function wordSearch(response) {
-    console.log(response);
-    console.log("howdy");
-    setWordData({
-      word: response.data.word,
-      text: response.data.phonetics.text,
-      verb: response.data.meanings[0].definitions.definition,
-      verbsynonym: response.data.meanings[0].definitions.definition.synonyms,
-      noun: response.data.meanings[1].definitions.definition,
-      nounsynonym: response.data.meanings[1].definitions.synonyms,
-    });
+    setWordData(response.data[0]);
   }
 
   function handleSubmit(event) {
@@ -33,7 +24,7 @@ export default function Search() {
 
   return (
     <div className="searchbar">
-      <form onClick={search} className="form">
+      <form onSubmit={search} className="form">
         <input
           className="input-field"
           type="search"
