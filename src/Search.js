@@ -24,16 +24,18 @@ export default function Search() {
 
   return (
     <div className="searchbar">
-      <form onSubmit={search} className="form">
-        <input
-          className="input-field"
-          type="search"
-          placeholder="     Search for a word"
-          onChange={handleSubmit}
-          autoFocus="on"
-        ></input>
-        <button className="button mt-3">Search</button>
-      </form>
+      <section>
+        <form onSubmit={search} className="form">
+          <input
+            className="input-field"
+            type="search"
+            placeholder="  Search for a word"
+            onChange={handleSubmit}
+            autoFocus="on"
+          ></input>
+          <button className="button mt-3">Search</button>
+        </form>
+      </section>
       <WordData data={wordData} />
     </div>
   );

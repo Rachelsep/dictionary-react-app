@@ -7,15 +7,17 @@ export default function WordData(props) {
   if (props.data) {
     return (
       <div className="word-data">
-        <h1 className="word">{props.data.word}</h1>
-        {props.data.phonetics.map(function (phonetics, index) {
-          return (
-            <div key="index">
-              <Phonetics phonetics={phonetics} />
-            </div>
-          );
-        })}
-        ;
+        <section>
+          <h1 className="word">{props.data.word}</h1>
+          {props.data.phonetics.map(function (phonetics, index) {
+            return (
+              <div key="index">
+                <Phonetics phonetics={phonetics} />
+              </div>
+            );
+          })}
+        </section>
+
         {props.data.meanings.map(function (meaning, index) {
           return (
             <div key={index}>

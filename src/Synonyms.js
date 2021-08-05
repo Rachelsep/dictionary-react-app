@@ -1,4 +1,5 @@
 import React from "react";
+import "./WordData.css";
 
 export default function Synonyms(props) {
   if (props.synonyms) {
