@@ -4,11 +4,14 @@ import "./Synonyms.css";
 export default function Synonyms(props) {
   if (props.synonyms) {
     return (
-      <ul className="synonyms">
-        {props.synonyms.map(function (synonym, index) {
-          return <li key={index}>{synonym} </li>;
-        })}
-      </ul>
+      <div>
+        <div className="similar mt-3">Similar:</div>
+        <ul className="synonyms">
+          {props.synonyms.map(function (synonym, index) {
+            return <li key={index}>{synonym} </li>;
+          })}
+        </ul>
+      </div>
     );
   } else {
     return null;

@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Search.css";
 import WordData from "./WordData.js";
+import Photos from "./Photos.js";
 
 export default function Search() {
   let [keyword, setKeyword] = useState("");
   let [wordData, setWordData] = useState(null);
+  let [photos, setPhotos] = useState(null);
 
   function wordSearch(response) {
     setWordData(response.data[0]);
@@ -15,10 +17,24 @@ export default function Search() {
     setKeyword(event.target.value);
   }
 
+  function handlePexelsResponse(response) {
+    setPhotos(response.data.photos);
+  }
+
   function search(event) {
     event.preventDefault();
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`;
     axios.get(apiUrl).then(wordSearch);
+
+    let pexelsApiKey =
+      "563492ad6f91700001000001109b38bd694444518139b64f53ce7570";
+    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=9`;
+    let headers = { Authorization: `Bearer ${pexelsApiKey}` };
+    axios
+      .get(pexelsApiUrl, {
+        headers: headers,
+      })
+      .then(handlePexelsResponse);
   }
 
   return (
@@ -38,6 +54,7 @@ export default function Search() {
         </form>
       </section>
       <WordData data={wordData} />
+      <Photos photos={photos} />
     </div>
   );
 }
