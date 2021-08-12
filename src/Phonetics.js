@@ -1,11 +1,14 @@
 import React from "react";
 import "./WordData.css";
+import "./Phonetics.css";
 
 export default function Phonetics(props) {
   return (
-    <div className="phonetics">
-      <a href={props.phonetics.audio}>Audio</a>
-      <p>{props.phonetics.text}</p>
+    <div className="Phonetic">
+      <a href={props.phonetics.audio} target="_blank" rel="noreferrer">
+        Listen
+      </a>
+      <span className="text">{props.phonetics.text}</span>
     </div>
   );
 }

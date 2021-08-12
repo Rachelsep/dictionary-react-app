@@ -1,6 +1,7 @@
 import React from "react";
 import Meaning from "./Meaning";
 import "./WordData.css";
+import "./Phonetics.css";
 import Phonetics from "./Phonetics";
 
 export default function WordData(props) {

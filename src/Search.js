@@ -23,17 +23,18 @@ export default function Search() {
   }
 
   return (
-    <div className="searchbar">
+    <div className="searchbar mt-5">
       <section>
         <form onSubmit={search} className="form">
           <input
-            className="input-field"
+            className="form-control form-control-lg input"
             type="search"
-            placeholder="  Search for a word"
+            placeholder="Search for a word"
             onChange={handleSubmit}
-            autoFocus="on"
           ></input>
-          <button className="button mt-3">Search</button>
+          <div className="hint mt-3">
+            <em>i.e. dog, sailboat, dance</em>
+          </div>
         </form>
       </section>
       <WordData data={wordData} />
