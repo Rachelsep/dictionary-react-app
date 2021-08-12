@@ -1,6 +1,8 @@
 .word {
   text-align: left;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 section {

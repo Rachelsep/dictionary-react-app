@@ -1,18 +1,14 @@
 import React from "react";
-import "./WordData.css";
+import "./Synonyms.css";
 
 export default function Synonyms(props) {
   if (props.synonyms) {
     return (
-      <div className="synonyms">
+      <ul className="synonyms">
         {props.synonyms.map(function (synonym, index) {
-          return (
-            <div>
-              <li key={index}>{synonym} </li>
-            </div>
-          );
+          return <li key={index}>{synonym} </li>;
         })}
-      </div>
+      </ul>
     );
   } else {
     return null;

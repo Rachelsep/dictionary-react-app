@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./Homepage.css";
 import "./Search.css";
 import WordData from "./WordData.js";
 
@@ -25,6 +24,7 @@ export default function Search() {
   return (
     <div className="searchbar mt-5">
       <section>
+        <h1 className="intro">What word do you want to look up?</h1>
         <form onSubmit={search} className="form">
           <input
             className="form-control form-control-lg input"
