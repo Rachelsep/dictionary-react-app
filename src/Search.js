@@ -32,7 +32,7 @@ export default function Search() {
             placeholder="Search for a word"
             onChange={handleSubmit}
           ></input>
-          <div className="hint mt-3">
+          <div className="hint mt-2">
             <em>i.e. dog, sailboat, dance</em>
           </div>
         </form>
